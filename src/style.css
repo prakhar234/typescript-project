@@ -1,0 +1,311 @@
+@font-face {
+  font-family: "klavika-bold";
+  src: url("./fonts/klavika-bold-webfont.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "klavika-medium";
+  src: url("./fonts/klavika-medium-webfont.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "klavika-regular";
+  src: url("./fonts/klavika-regular-webfont.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "klavika-light";
+  src: url("./fonts/klavika-light-webfont.woff") format("woff");
+  font-style: normal;
+}
+
+body {
+  font-family: "klavika-regular";
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.loading .loading-txt-container {
+  font-family: "klavika-medium";
+  font-style: italic;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.load-slowly {
+  width: 0;
+  opacity: 0;
+  animation-name: loadSlowly;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.loading .loading-img-container img {
+  height: auto;
+  width: auto;
+  -webkit-animation: mover 0.5s infinite alternate;
+  animation: mover 0.5s infinite alternate;
+}
+
+.app-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.app-content .logo {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.app-content .logo img {
+  width: auto;
+  height: auto;
+}
+
+.app-content .slider-indexer {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px dotted #fff;
+  display: flex;
+  z-index: 5;
+  font-family: "klavika-light";
+}
+
+.app-content .slider-indexer .index {
+  border-right: 1px dotted #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.app-content .background-content {
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.app-content .background-content h1 {
+  text-transform: uppercase;
+  text-decoration: underline;
+  width: 250px;
+}
+
+.app-content .slider-indexer .index:hover,
+.app-content .slider-indexer .index.active {
+  background-color: #fff;
+  color: #000;
+}
+
+.slider-container {
+  position: relative;
+  background: url("./images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.slider-container .slider-text {
+  position: absolute;
+  text-transform: uppercase;
+  text-decoration: underline;
+  width: 250px;
+}
+
+.slider-container .slider-text.top {
+  top: 0;
+  left: 40px;
+  animation: sliderTextAnimation 0.4s linear;
+}
+
+.slider-container .slider-text.left {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50px;
+  animation: sliderTextAnimation 0.4s linear;
+}
+
+.slider-container .slider-text.right {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+  animation: sliderTextAnimation 0.4s linear;
+}
+
+.slider-container.slideAnimationLeft {
+  transition: background-position-x 0.3s linear;
+}
+
+.slider-container.first {
+  background-position: 0 0;
+}
+
+.slider-container.two {
+  background-position: 12% 0;
+}
+.slider-container.three {
+  background-position: 24% 0;
+}
+.slider-container.four {
+  background-position: 36% 0;
+}
+.slider-container.five {
+  background-position: 48% 0;
+}
+.slider-container.six {
+  background-position: 60% 0;
+}
+.slider-container.seven {
+  background-position: 72% 0;
+}
+.slider-container.eight {
+  background-position: 84% 0;
+}
+.slider-container.nine {
+  background-position: 115% 0;
+}
+.arrow {
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 5;
+}
+
+.left {
+  position: absolute;
+  left: 10px;
+  right: inherit;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.left.hide {
+  display: none;
+}
+
+.right {
+  position: absolute;
+  right: 10px;
+  left: inherit;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+@media only screen and (min-width: 500px) {
+  .app-content .logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    left: inherit;
+    transform: none;
+  }
+
+  .app-content .slider-indexer {
+    bottom: 30px;
+    left: 20px;
+    transform: none;
+  }
+
+  .slider-container .slider-text {
+    width: 350px;
+  }
+
+  .slider-container .slider-text.top {
+    top: 0;
+    left: 50px;
+    animation: sliderTextAnimation 0.4s linear;
+  }
+
+  .slider-container .slider-text.left {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    animation: sliderTextAnimation 0.4s linear;
+  }
+
+  .slider-container .slider-text.right {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    animation: sliderTextAnimation 0.4s linear;
+  }
+
+  .app-content .background-content h1 {
+    width: 350px;
+  }
+
+  .left {
+    left: 20px;
+  }
+
+  .right {
+    right: 20px;
+  }
+}
+
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes loadSlowly {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    width: 100%;
+  }
+}
+@keyframes sliderTextAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

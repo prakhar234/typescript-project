@@ -1,0 +1,35 @@
+{
+  "name": "typescript-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prakhar234/typescript-project.git"
+  },
+  "keywords": [],
+  "author": "Prakhar Shukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prakhar234/typescript-project/issues"
+  },
+  "homepage": "https://github.com/prakhar234/typescript-project#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^5.0.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.14",
+    "typescript": "^4.1.3",
+    "webpack": "^5.20.1",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {}
+}
